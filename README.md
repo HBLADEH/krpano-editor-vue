@@ -1,5 +1,5 @@
 # krpano-editor-vuejs
-
+注意！！！本项目是拉取 Github 用户 @xxweimei 的项目并在此基础上进行二次修改，原项目地址为 https://github.com/xxweimei/krpano-editor-vuejs
 ## 简介
 此项目是基于原jquery版本编辑器逻辑用vuejs重构而来。
 简化代码逻辑的同时美化了页面。
