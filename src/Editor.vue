@@ -35,7 +35,7 @@
         <div class="scene-module has-text-white" v-show="module == 0">
           <h5 class="title is-5 has-text-white scene-title">场景列表</h5>
           <div class="line"></div>
-          <div class="scene-item" v-for="scene in sceneList" :class="{'scene-item-selected' : scene.index == currentSceneIndex}">
+          <div class="scene-item" v-for="scene in sceneList" :class="{'scene-item-selected' : scene.index == currentSceneIndex}" v-bind:key="scene.name">
             <div class="scene-name" @click="changeScene(scene)">{{scene.name}}</div>
             <figure class="image is-128x128" @click="changeScene(scene)">
               <img :src="scene.thumburl">
@@ -93,7 +93,7 @@
           </div>
           <div class="line"></div>
           <div class="hotspot-list">
-            <div class="hotspot-item" v-for="hotspotItem in hotspotList" @click="showHotspotDetail(hotspotItem)" :class="{'hotspot-item-selected':  selectedHotspot.name == hotspotItem.name}">
+            <div class="hotspot-item" v-for="hotspotItem in hotspotList" @click="showHotspotDetail(hotspotItem)" :class="{'hotspot-item-selected':  selectedHotspot.name == hotspotItem.name}" v-bind:key="hotspotItem.name">
               <img :src="hotspotItem.url">
               <div>场景切换</div>
             </div>
@@ -111,7 +111,7 @@
         <div class="field">
           <label class="label has-text-white">图标样式</label>
           <div class="columns is-multiline hotspot-detail-style-list">
-            <div class="column is-4" v-for="style in hotspotStyleList">
+            <div class="column is-4" v-for="style in hotspotStyleList" v-bind:key="style.name">
               <div class="hotspot-detail-style" @click="selectHotspotStyle(style.name)" :class="{'hotspot-detail-style-selected': style.name==currentHotspot.style}">
                 <img :src="style.imgUrl">
               </div>
@@ -141,7 +141,7 @@
         <div class="field">
           <label class="label has-text-white">目标场景</label>
           <div class="columns is-multiline hotspot-detail-scene-list">
-            <div class="column is-6 has-text-centered" v-for="scene in sceneListExceptCurrent">
+            <div class="column is-6 has-text-centered" v-for="scene in sceneListExceptCurrent" v-bind:key="scene.name">
               <div class="hotspot-detail-scene" @click="selectHotspotLinkedScene(scene.name)" :class="{'hotspot-detail-scene-selected': scene.name==currentHotspot.linkedscene}">
                 <img :src="scene.thumburl">
                 <span>{{scene.name}}</span>
