@@ -243,6 +243,9 @@ export default {
         {
           name: 'skin_hotspotstyle',
           imgUrl: '../static/skin/vtourskin_hotspot.png'
+        },{
+          name: 'dynamic_arr_def',
+          imgUrl: '../static/skin/dynamic/arr_def.png'
         }
       ],
       //接口请求状态
